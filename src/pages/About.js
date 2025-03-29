@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaCheckCircle, FaHospital, FaAward, FaUserMd, FaBed, FaAmbulance, FaClock, 
+import {  FaHospital,  FaUserMd,   FaClock, 
          FaStethoscope, FaHandHoldingMedical, FaMedkit } from 'react-icons/fa';
 
 const AboutContainer = styled.div`
@@ -198,53 +198,7 @@ const StatNumber = styled.h3`
   margin-bottom: 0.5rem;
 `;
 
-const StatText = styled.p`
-  color: #1a365d;
-  font-size: 1.1rem;
-`;
 
-const FacilitiesSection = styled(Section)`
-  text-align: center;
-`;
-
-const FacilitiesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  padding: 0 2rem;
-`;
-
-const FacilityCard = styled.div`
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-`;
-
-const FacilityIcon = styled.div`
-  color: #48CAC9;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-`;
-
-const FacilityTitle = styled.h3`
-  color: #1a365d;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-`;
-
-const FacilityText = styled.p`
-  color: #4a5568;
-  font-size: 1rem;
-  line-height: 1.6;
-`;
 
 const TimelineSection = styled(Section)`
   background: white;
@@ -333,164 +287,9 @@ const TimelineTitle = styled.h3`
   margin-bottom: 0.5rem;
 `;
 
-const HighlightsSection = styled(Section)`
-  background: linear-gradient(135deg, #1a365d 0%, #2a4a7f 100%);
-  color: white;
-  text-align: center;
-`;
 
-const HighlightsTitle = styled(SectionTitle)`
-  color: white;
-  text-align: center;
-  margin: 0 auto 3rem;
 
-  &::after {
-    left: 50%;
-    transform: translateX(-50%);
-    background: #48CAC9;
-  }
-`;
 
-const HighlightsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-
-  @media screen and (max-width: 968px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const HighlightCard = styled.div`
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.15);
-  }
-`;
-
-const HighlightIcon = styled.div`
-  color: #48CAC9;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-`;
-
-const HighlightTitle = styled.h3`
-  color: white;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-`;
-
-const HighlightText = styled.p`
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  line-height: 1.6;
-`;
-
-// Animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
-};
-
-// Convert regular components to motion components
-const MotionValueCard = styled(motion.div)`
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-`;
-
-const MotionHighlightCard = styled(motion.div)`
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.15);
-  }
-`;
-
-const MotionStatCard = styled(motion.div)`
-  text-align: center;
-`;
-
-const MotionFacilityCard = styled(motion.div)`
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-`;
-
-const MotionTimelineContent = styled(motion.div)`
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 45%;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #48CAC9;
-    border-radius: 50%;
-    top: 20px;
-    ${props => props.align === 'right' ? 'left: -60px;' : 'right: -60px;'}
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-
-    &::before {
-      left: -50px;
-    }
-  }
-`;
 
 const TestimonialsSection = styled(Section)`
   background: linear-gradient(135deg, #1a365d 0%, #2a4a7f 100%);
